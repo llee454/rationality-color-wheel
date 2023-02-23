@@ -1,0 +1,18 @@
+
+
+Nostradamus was a writer from the 1500s who wrote several books that many people claim successfully predicted world events. In the interpretations published about Nostradamus's writings, he is credited, amongst other things, with predicting the Great Fire of London in 1666. D
+
+Predicting the future
+
+While out at a well reputed restaurant, you open a fortune cookie from a company that promises to predict the future. Inside, you find a prediction saying that you will have a delicious meal that day. A little while latter, you eat a meal at the restaurant and find that it is delicious! Surprised, you turn back to the fortune cookie and wonder, did it really just predict the future? What's the likelihood that the company that makes those fortune cookies can "read" the future given their successful prediction?
+
+For this one, we just want to weigh the evidence, so rather than look at a single prior, we will compare all of them. The probability that we would have a good meal if they could predict the future was very likely (Blue), the probability that we would have a good meal given that we were in a restaurant (and fortune cookies are usually served in restaurants) was likely (Green). So, we look at the four slices where the second and third rings are Blue and Green respectively. For Red, Blue, Green, the output is Unlikely, For Orange, Blue, Green, the output is Fair, and so on. In general, the evidence increases our confidence in clairavoiant fortune cookies, but not by much.
+
+
+
+Empty Evidence
+
+Initially you have a little reason to believe it. Is this evidence reason to change your mind.  
+
+If you cannot pronounce it, you probabily shouldn't eat it. Well you can't pronounce most vitamins, yet you must eat them to survice hence, this is not a good rule. Example: which of these are safe to eat? [Menaquinone](https://en.wikipedia.org/wiki/Menaquinone), [Phylloquinone](https://en.wikipedia.org/wiki/Phylloquinone), [Tocotrienols](https://en.wikipedia.org/wiki/Tocotrienol), [cholecalciferol](https://en.wikipedia.org/wiki/Cholecalciferol).  Each of these are essential to live! If it's good for you, you're no more likely to be able to pronounce its scientific name. They are vitamins Ks, E,  and Ds. Orange Blue Blue Orange. No matter where you start, you end up where you began. For example Green Blue Blue Green. Hence, this is empty evidence.
+
