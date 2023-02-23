@@ -3,7 +3,8 @@ enum Mode {
   Bounded // outputs upper and lower bounds for the posterior probability.
 }
 
-Mode mode = Mode.Normal;
+// TOGGLE ME!!!
+Mode mode = Mode.Bounded;
 
 int n = 125;
 
@@ -188,12 +189,12 @@ void setup() {
           // result ring - median value
           pushMatrix ();
           fill (getColor (posteriorLevel));
-          arc (0, 0, 875, 875, -offset, 2*PI/n - offset, PIE);
+          arc (0, 0, 880, 880, -offset, 2*PI/n - offset, PIE);
           popMatrix ();
           // result ring - lower bound
           pushMatrix ();
           fill (getColor (posteriorLBLevel));
-          arc (0, 0, 825, 825, -offset, 2*PI/n - offset, PIE);
+          arc (0, 0, 820, 820, -offset, 2*PI/n - offset, PIE);
           popMatrix ();
         popMatrix ();
         // result ring outline
