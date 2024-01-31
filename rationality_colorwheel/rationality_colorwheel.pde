@@ -125,7 +125,7 @@ int getLevel (float probability) {
 void setup() {
   size (1400, 1400);
   background (255);
-  stroke(150);
+  stroke(100);
   translate (width/2, height/2);
   for (int i = 0; i < n; i ++) {
     int prior = i / 25;
