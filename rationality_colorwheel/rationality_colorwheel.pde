@@ -30,11 +30,11 @@ color getColor (int level) {
 
 float getProbability (int level) {
   switch (level) {
-    case 0: return 0.05;
-    case 1: return 0.20;
-    case 2: return 0.50;
-    case 3: return 0.80;
-    case 4: return 0.95;
+    case 0: return 0.025; // half way between 0.05 and 0.0
+    case 1: return 0.125; // half way between 0.20 and 0.05
+    case 2: return 0.50; // ... 0.20 and 0.80
+    case 3: return 0.875; // ... 0.80 and 0.95
+    case 4: return 0.975; // ... 0.95 and 1.00
     default:
       return 0.0;
   }
@@ -65,6 +65,13 @@ float getProbabilityLowerBound (int level) {
       return 0.0;
   }}
 
+/*
+  Accepts three arguments:
+    prior, the probability that the hypothesis is true without the evidence;
+    conditional, the probability of seeing the evidence if the hypothesis is true;
+    notConditional, the probability of seeing the evidence if the hypothesis is not true;
+  and returns the probability that the hypothesis is true using Bayes rule.
+*/
 float posterior (int prior, int conditional, int notConditional) {
   float priorProb   = getProbability (prior);
   float condProb    = getProbability (conditional);
@@ -216,12 +223,12 @@ void setup() {
   fill (getColor (4));
   rect (-100, 0, 25, 25);
   fill (100);
-  text ("Very Likely (95%)", -60, 0, 300, 50);
+  text ("Very Likely (≥ 95%)", -60, 0, 300, 50);
 
   fill (getColor (3));
   rect (-100, 25, 25, 25);
   fill (100);
-  text ("Likely (80%)", -60, 25, 300, 50);
+  text ("Likely (≥ 80%)", -60, 25, 300, 50);
 
   fill (getColor (2));
   rect (-100, 50, 25, 25);
@@ -231,23 +238,23 @@ void setup() {
   fill (getColor (1));
   rect (-100, 75, 25, 25);
   fill (100);
-  text ("Unlikely (20%)", -60, 75, 300, 50);
+  text ("Unlikely (≤ 20%)", -60, 75, 300, 50);
 
   fill (getColor (0));
   rect (-100, 100, 25, 25);
   fill (100);
-  text ("Very Unlikely (5%)", -60, 100, 300, 50);
+  text ("Very Unlikely (≤ 5%)", -60, 100, 300, 50);
   
   textSize (25);
   fill (100);
-  text ("The Rationality Colorwheel", -150, -125, 300, 50);
+  text ("The Evidence Colorwheel", -150, -125, 300, 50);
 
   switch (mode) {
     case Normal:
-      save ("rationality_colorwheel.png");
+      save ("evidence_colorwheel.png");
       break;
     case Bounded:
-      save ("rationality_colorwheel_bounded.png");
+      save ("evidence_colorwheel_bounded.png");
       break;
   }
 }
