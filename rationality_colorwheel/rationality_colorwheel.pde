@@ -1,3 +1,6 @@
+import processing.svg.*;
+
+
 enum Mode {
   Normal, // normal mode - generates the "normal" colorwheel
   Bounded // outputs upper and lower bounds for the posterior probability.
@@ -45,8 +48,8 @@ float getProbabilityUpperBound (int level) {
   switch (level) {
     case 0: return 0.05;
     case 1: return 0.20;
-    case 2: return 0.79;
-    case 3: return 0.94;
+    case 2: return 0.80;
+    case 3: return 0.95;
     case 4: return 1.00;
     default:
       return 0.0;
@@ -57,8 +60,8 @@ float getProbabilityUpperBound (int level) {
 float getProbabilityLowerBound (int level) {
   switch (level) {
     case 0: return 0.00;
-    case 1: return 0.06;
-    case 2: return 0.21;
+    case 1: return 0.05;
+    case 2: return 0.20;
     case 3: return 0.80;
     case 4: return 0.95;
     default:
@@ -123,7 +126,9 @@ int getLevel (float probability) {
 }
 
 void setup() {
-  size (1400, 1400);
+  size(1400, 1400, SVG, "filename.svg");
+}
+void draw () {
   background (255);
   stroke(100);
   translate (width/2, height/2);
@@ -249,12 +254,5 @@ void setup() {
   fill (100);
   text ("The Evidence Colorwheel", -150, -125, 300, 50);
 
-  switch (mode) {
-    case Normal:
-      save ("evidence_colorwheel.png");
-      break;
-    case Bounded:
-      save ("evidence_colorwheel_bounded.png");
-      break;
-  }
+  exit ();
 }
